@@ -22,16 +22,10 @@ effective-pom.xml
 effective-settings.xml 
 /*/.gwt/ 
 .cache 
-<<<<<<< HEAD
 .idea/ 
 classes/
 target/
 out/
-=======
-.idea/
-classes/
-target/
->>>>>>> 8bd6a17e9924a88451c0282293c4e0f98e71f3fe
 *.iml 
 *.log 
 *.lck 
