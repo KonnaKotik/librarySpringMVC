@@ -29,6 +29,13 @@ public class AuthorsServiceImpl implements AuthorsService {
         this.booksService = booksService;
     }
 
+  /*  @Autowired
+    public AuthorsServiceImpl(AuthorsRepository authorsRepository, AuthorConverter authorConverter, BooksService booksService) {
+        this.authorsRepository = authorsRepository;
+        this.authorConverter = authorConverter;
+        this.booksService = booksService;
+    }*/
+
     @Override
     public Author getByName(String name) {
         Optional<Author> authorCandidate = authorsRepository.findByName(name);

@@ -56,7 +56,7 @@ public class HibernateConfig {
         return dataSource;
     }
 
-    @Bean
+  /*  @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory){
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(entityManagerFactory);
@@ -69,7 +69,7 @@ public class HibernateConfig {
     public LocalContainerEntityManagerFactoryBean getEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManager = new LocalContainerEntityManagerFactoryBean();
         entityManager.setDataSource(dataSource());
-        entityManager.setPackagesToScan("ru.kpfu.itis.models");
+        entityManager.setPackagesToScan("ru.itis.models");
 
         // прослойка между Jpa и hibernate
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
@@ -78,9 +78,9 @@ public class HibernateConfig {
 
         return entityManager;
     }
+*/
 
-
-   /* @Bean
+    @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
@@ -108,7 +108,7 @@ public class HibernateConfig {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(getEntityManagerFactory().getObject());
         return transactionManager;
-    }*/
+    }
 
 
 
