@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 public class AppConfig extends WebMvcConfigurerAdapter {
 
 
-    @Lazy
+
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer freeMarkerConfigurer = new FreeMarkerConfigurer();
@@ -34,7 +34,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
 
-    @Lazy
+
     @Bean(name = "freeMarkerViewResolver")
     public ViewResolver viewResolver() {
         FreeMarkerViewResolver viewResolver = new FreeMarkerViewResolver();

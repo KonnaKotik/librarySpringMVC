@@ -12,11 +12,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BookDto {
 
+    private Long id;
+
     private String title;
 
     private String description;
 
     private String authorName;
+
+    private Long authorId;
+
+    private String urlImg;
 
 
 }
