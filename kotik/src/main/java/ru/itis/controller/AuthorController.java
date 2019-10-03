@@ -24,7 +24,7 @@ public class AuthorController {
 
     @GetMapping("/authors")
     public String getAllAuthors(Model model) {
-        model.addAttribute("authorsList",authorsService.getAll());
+        model.addAttribute("authorsList", authorsService.getAll());
         return "authors_page";
     }
 
@@ -44,15 +44,12 @@ public class AuthorController {
 
     @PostMapping("/authors/add")
     public String addNewAuthor(@ModelAttribute("authorDto") AuthorDto authorCreateForm) {
-        System.out.println(authorCreateForm.getDescription());
-        System.out.println(authorCreateForm.getName());
-        System.out.println(authorCreateForm.getUrlImg());
         authorsService.save(authorCreateForm);
         return "redirect:/authors";
     }
 
     @PostMapping("/authors/edit/{id}")
-    public String updateAuthors(@PathVariable Long id,@ModelAttribute("authorDto") AuthorDto authorUpdateForm) {
+    public String updateAuthors(@PathVariable Long id, @ModelAttribute("authorDto") AuthorDto authorUpdateForm) {
         AuthorDto newAuthorDto = authorsService.getById(id);
         newAuthorDto.setName(authorUpdateForm.getName());
         newAuthorDto.setDescription(authorUpdateForm.getDescription());

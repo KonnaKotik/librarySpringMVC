@@ -18,7 +18,7 @@ public class AuthorsServiceImpl implements AuthorsService {
 
     private final AuthorsRepository authorsRepository;
     @Autowired
-    private  AuthorMapper authorConverter;
+    private AuthorMapper authorConverter;
 
 
     private final BooksService booksService;
@@ -32,8 +32,8 @@ public class AuthorsServiceImpl implements AuthorsService {
 
     @Override
     public void save(AuthorDto authorDto) {
-        if(authorsRepository.existsByName(authorDto.getName())) {
-           // booksService.save(authorDto.getBooks());
+        if (authorsRepository.existsByName(authorDto.getName())) {
+            // booksService.save(authorDto.getBooks());
             authorsRepository.save(authorConverter.authorDtoToAuthor(authorDto));
             System.out.println(authorConverter.authorDtoToAuthor(authorDto).getName());
         }
@@ -42,8 +42,8 @@ public class AuthorsServiceImpl implements AuthorsService {
     @Override
     public void delete(Long id) {
         Optional<Author> authorCandidate = authorsRepository.findById(id);
-        if(authorCandidate.isPresent()) {
-            for (Book book: authorCandidate.get().getBooks()) {
+        if (authorCandidate.isPresent()) {
+            for (Book book : authorCandidate.get().getBooks()) {
                 booksService.delete(book.getId());
             }
             authorsRepository.delete(authorCandidate.get());

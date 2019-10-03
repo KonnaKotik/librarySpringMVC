@@ -34,10 +34,11 @@ public class BookController {
         model.setViewName("book");
         return model;
     }
+
     @GetMapping("/authors/{id}/books")
     public ModelAndView getAuthorBook(@PathVariable Long id) {
         ModelAndView model = new ModelAndView();
-        model.addObject("books",booksService.getBooksByAuthorId(id) );
+        model.addObject("books", booksService.getBooksByAuthorId(id));
         model.setViewName("authorBook");
         return model;
     }
@@ -49,7 +50,7 @@ public class BookController {
     }
 
     @GetMapping("/books/add")
-    public String addBookPAge(){
+    public String addBookPAge() {
         return "bookAdd";
     }
 
@@ -60,7 +61,7 @@ public class BookController {
     }
 
     @PostMapping("/books/edit/{id}")
-    public String editBook(@PathVariable Long id,  @ModelAttribute BookDto bookUpdateForm) {
+    public String editBook(@PathVariable Long id, @ModelAttribute BookDto bookUpdateForm) {
         BookDto newBookDto = booksService.getById(id);
         newBookDto.setDescription(bookUpdateForm.getDescription());
         newBookDto.setTitle(bookUpdateForm.getDescription());
