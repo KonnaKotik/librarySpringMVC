@@ -13,7 +13,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface BookMapper {
 
-
     @Mapping(target = "author.id", source = "authorId")
      Book bookDtoToBook(BookDto bookDto);
 

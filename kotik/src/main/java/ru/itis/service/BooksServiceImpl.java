@@ -38,7 +38,8 @@ public class BooksServiceImpl implements BooksService {
     @Override
     public void save(BookDto bookDto) {
         if(!booksRepository.existsByTitleAndAuthor_Name(bookDto.getTitle(), bookDto.getAuthorName())) {
-            booksRepository.save(bookConverter.bookDtoToBook(bookDto));
+            Book book = bookConverter.bookDtoToBook(bookDto);
+            booksRepository.save(book);
         } throw new EntityExistsException("This book is exists");
 
     }

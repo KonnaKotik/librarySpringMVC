@@ -35,6 +35,7 @@ public class AuthorsServiceImpl implements AuthorsService {
         if(authorsRepository.existsByName(authorDto.getName())) {
            // booksService.save(authorDto.getBooks());
             authorsRepository.save(authorConverter.authorDtoToAuthor(authorDto));
+            System.out.println(authorConverter.authorDtoToAuthor(authorDto).getName());
         }
     }
 

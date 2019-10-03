@@ -51,7 +51,7 @@
             <form class="form-inline my-2 my-lg-0">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
                     <div class="nav-item btn-home">
-                        <a href='/' class="btn btn-outline-light my-2 my-sm-0" type="back">Назад</a>
+                        <a href='/' class="btn btn-outline-light my-2 my-sm-0" type="back">Back</a>
                     </div>
                 </div>
             </form>
@@ -64,14 +64,15 @@
                 <div class="col-4"></div>
                 <div class="col-4"></div>
                 <div class="col-4 text-right">
-                    <button href='/books/add' class="btn btn-outline-success" style="color: #000000;width: 150px ">Add Book</button>
+                    <button href="http://localhost:8080/books/add" class="btn btn-outline-success" style="color: #000000;width: 150px ">Add Book</button>
 
                 </div>
             </div>
             <br><br>
+            <#list books as book>
     <div class="row">
         <div class="col-8">
-            <#list books as book>
+
            <div class="row">
                <div class="col-3">
                    <a> <img src = "${book.urlImg}" width="160"/></a>
@@ -86,23 +87,22 @@
                    <h5>${book.description} </h5>
                    </p>
                    <div style="position:absolute; right: 0px; bottom: 0px;">
-                       <a href="/authors/${book.authorId}">
+                       <a href="http://localhost:8080/authors/${book.authorId}">
                        <h6 >${book.authorName}</h6>
                        </a>
-                   </div>
-                   <div class="col-1">
-
                    </div>
                </div>
            </div>
           <hr>
-            </#list>
+
         </div>
         <div class="col-4 text-center">
-            <button href='/books/edit/${book.id}' class="btn btn-outline-success" style="color: #000000;width: 150px ">Edit book</button>
+            <button href="http://localhost:8080/books/edit/${book.id}" class="btn btn-outline-success" style="color: #000000;width: 150px ">Edit book</button>
         </div>
 
+
     </div>
+            </#list>
         </div>
 
 </body>

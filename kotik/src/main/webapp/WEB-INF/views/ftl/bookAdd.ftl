@@ -45,15 +45,6 @@
 
 <div class="container">
         <br><br>
-        <div class="row" style="margin-bottom: 50px ">
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-             <div class="col-4 text-right">
-                 <form  method="post">
-                     <button formmethod="post" href="http://localhost:8080/books/edit/${book.id}/delete" class="btn btn-outline-danger" type="submit" data-toggle="modal" data-target="#deleteModal"  style="color: #000000; width: 150px; border-radius: 20px ">Delete</button>
-                 </form>
-             </div>
-        </div>
     <form method="post">
         <div class="row" style="margin-bottom: 15px ">
         <div class="col-2 text-left" style="

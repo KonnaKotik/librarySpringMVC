@@ -44,6 +44,9 @@ public class AuthorController {
 
     @PostMapping("/authors/add")
     public String addNewAuthor(@ModelAttribute("authorDto") AuthorDto authorCreateForm) {
+        System.out.println(authorCreateForm.getDescription());
+        System.out.println(authorCreateForm.getName());
+        System.out.println(authorCreateForm.getUrlImg());
         authorsService.save(authorCreateForm);
         return "redirect:/authors";
     }
@@ -58,9 +61,11 @@ public class AuthorController {
     }
 
     @GetMapping("authors/edit/{id}")
-    public String getAuthorEditPage(@PathVariable Long id, Model model) {
-        model.addAttribute("author", authorsService.getById(id));
-        return "authorEdit";
+    public ModelAndView getAuthorEditPage(@PathVariable Long id) {
+        ModelAndView model = new ModelAndView();
+        model.addObject("author", authorsService.getById(id));
+        model.setViewName("authorEdit");
+        return model;
     }
 
     @PostMapping("/authors/edit/{id}/delete")

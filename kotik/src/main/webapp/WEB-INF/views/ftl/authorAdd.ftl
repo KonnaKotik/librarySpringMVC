@@ -60,6 +60,14 @@
             </div>
             <input type="text" class="col-10 themed-grid-col" name="description" id="description"  placeholder="Description" >
         </div>
+         <div class="row" style="margin-bottom: 30px ">
+             <div class="col-2 text-left" style="
+  padding: 15px;">
+                 <h4>Url Image</h4>
+             </div>
+             <input type="text" class="col-10 themed-grid-col" name="urlImg" id="urlImg"  placeholder="UrlImg" >
+         </div>
+
         <div class="text-center">
             <button type="submit" class="btn btn-outline-success" style="color: #000000;width: 200px; border-radius: 20px ">Add</button>
             </form>

@@ -54,7 +54,7 @@
                  </form>
              </div>
         </div>
-     <form   method="post">
+     <form action="/authors/edit/${author.id}"   method="post">
         <div class="row" style="margin-bottom: 15px ">
         <div class="col-2 text-left" style="
   padding: 15px;">
@@ -72,8 +72,9 @@
         <div class="text-center">
 
             <button type="submit" class="btn btn-outline-success" style="color: #000000;width: 200px; border-radius: 20px ">Edit</button>
-            </form>
+
         </div>
+     </form>
     </div>
 
 

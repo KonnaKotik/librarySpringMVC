@@ -69,11 +69,11 @@
                </div>
            </div>
           <hr>
-            </#list>
         </div>
         <div class="col-4 text-center">
-            <button href='/books/edit/${book.id}' class="btn btn-outline-success" style="color: #000000;width: 200px ">Редактировать</button>
+            <button  href="/books/edit/${book.id}" class="btn btn-outline-success" style="color: #000000;width: 200px ">Редактировать</button>
         </div>
+            </#list>
 
     </div>
         </div>
